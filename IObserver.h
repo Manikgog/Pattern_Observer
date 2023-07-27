@@ -1,6 +1,9 @@
-#ifndef _IOBSERVER_H_
+﻿#ifndef _IOBSERVER_H_
 #define _IOBSERVER_H_
 
+/*!
+\brief интерфейсный класс IObserver
+*/
 class IObserver
 {
 public:

@@ -1,4 +1,4 @@
-#ifndef _WEATHERDATA_h_
+﻿#ifndef _WEATHERDATA_h_
 #define _WEATHERDATA_h_
 
 #include <vector>
@@ -17,11 +17,19 @@ private:
 public:
 	WeatherData() : temperature_(0.0f), humidity_(0.0f), pressure_(0.0f) {}
 	
+	/*!
+	\brief метод для добавления новых наблюдателей для оповещения
+	\param[in] o - указатель на объект класса IObserver, который добавляется в вектор наблюдателей
+	*/
 	void registerObserver(IObserver* o) override
 	{
 		observers_.push_back(o);
 	}
 
+	/*!
+	\brief метод для удаления наблюдателя из вектора
+	\param[in] o - указатель на объект класса IObserver
+	*/
 	void removeObservers(IObserver* o) override
 	{
 		for (size_t i = 0; i < observers_.size(); i++)
@@ -34,7 +42,10 @@ public:
 		}
 		return;
 	}
-
+	
+	/*!
+	\brief метод для оповещения наблюдателей о появлении новых данных
+	*/
 	void notifyObservers()
 	{
 		for (size_t i = 0; i < observers_.size(); i++)
@@ -43,11 +54,18 @@ public:
 		}
 	}
 
+	/*!
+	\brief метод для вызова метода для оповещения наблюдателей о появлении новых данных
+	*/
 	void measurementsChanged()
 	{
 		notifyObservers();
 	}
 
+	/*!
+	\brief метод для имитации чтения данных с датчиков температуры, влажности и атмосферного давления
+	\param[in] temperature - температура,  humidity - влажность,  pressure - давление
+	*/
 	void setMeasurements(float temperature, float humidity, float pressure)
 	{
 		this->temperature_ = temperature;

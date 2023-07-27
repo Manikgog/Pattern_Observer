@@ -1,0 +1,67 @@
+\doxysection{ISubject Class Reference}
+\hypertarget{class_i_subject}{}\label{class_i_subject}\index{ISubject@{ISubject}}
+
+
+интерфейс субьекта, используется объектами для регистрации в качестве наблюдателя, а также исключения из списка  
+
+
+
+
+{\ttfamily \#include $<$ISubject.\+h$>$}
+
+Inheritance diagram for ISubject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_subject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_ac6e48ec045d28290182cde712c9b745a}{register\+Observer}} (\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}o)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a0627c0d88314586508003e6fa2dfab05}{remove\+Observers}} (\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}o)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a4d7d2edfc8eb2d8a06104f9e82124d4d}{notify\+Observers}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+интерфейс субьекта, используется объектами для регистрации в качестве наблюдателя, а также исключения из списка 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_subject_a4d7d2edfc8eb2d8a06104f9e82124d4d}\label{class_i_subject_a4d7d2edfc8eb2d8a06104f9e82124d4d} 
+\index{ISubject@{ISubject}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{notifyObservers()}{notifyObservers()}}
+{\footnotesize\ttfamily virtual void ISubject\+::notify\+Observers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_weather_data_ad876d1e134209b94cb4ac4729dda8019}{Weather\+Data}}.
+
+\Hypertarget{class_i_subject_ac6e48ec045d28290182cde712c9b745a}\label{class_i_subject_ac6e48ec045d28290182cde712c9b745a} 
+\index{ISubject@{ISubject}!registerObserver@{registerObserver}}
+\index{registerObserver@{registerObserver}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{registerObserver()}{registerObserver()}}
+{\footnotesize\ttfamily virtual void ISubject\+::register\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_weather_data_a949ea7ebd3b302ff3bda5b6b3a10d7d4}{Weather\+Data}}.
+
+\Hypertarget{class_i_subject_a0627c0d88314586508003e6fa2dfab05}\label{class_i_subject_a0627c0d88314586508003e6fa2dfab05} 
+\index{ISubject@{ISubject}!removeObservers@{removeObservers}}
+\index{removeObservers@{removeObservers}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{removeObservers()}{removeObservers()}}
+{\footnotesize\ttfamily virtual void ISubject\+::remove\+Observers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_weather_data_a0471b66312241f54f49088129eb05f01}{Weather\+Data}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ISubject.\+h\end{DoxyCompactItemize}

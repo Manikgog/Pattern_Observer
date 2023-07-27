@@ -1,0 +1,67 @@
+\doxysection{Weather\+Data.\+h}
+\hypertarget{_weather_data_8h_source}{}\label{_weather_data_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_WEATHERDATA\_h\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_WEATHERDATA\_h\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ISubject.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IObserver.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CurrentConditionsDisplay.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_weather_data}{WeatherData}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_subject}{ISubject}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ std::vector<IObserver*>\ observers\_;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{float}\ temperature\_;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{float}\ humidity\_;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{float}\ pressure\_;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_weather_data}{WeatherData}}()\ :\ temperature\_(0.0f),\ humidity\_(0.0f),\ pressure\_(0.0f)\ \{\}}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_weather_data_a949ea7ebd3b302ff3bda5b6b3a10d7d4}{registerObserver}}(\mbox{\hyperlink{class_i_observer}{IObserver}}*\ o)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ observers\_.push\_back(o);}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_weather_data_a0471b66312241f54f49088129eb05f01}{removeObservers}}(\mbox{\hyperlink{class_i_observer}{IObserver}}*\ o)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ observers\_.size();\ i++)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (observers\_.at(i)\ ==\ o)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ observers\_.erase(observers\_.begin()\ +\ i);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_weather_data_ad876d1e134209b94cb4ac4729dda8019}{notifyObservers}}()}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ observers\_.size();\ i++)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ observers\_.at(i)-\/>update(temperature\_,\ humidity\_,\ pressure\_);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_weather_data_af804be968ac54f7bf7d5663bfe89b67c}{measurementsChanged}}()}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_weather_data_ad876d1e134209b94cb4ac4729dda8019}{notifyObservers}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_weather_data_a21bbd41dc686a3871edc0ea2c4830e62}{setMeasurements}}(\textcolor{keywordtype}{float}\ temperature,\ \textcolor{keywordtype}{float}\ humidity,\ \textcolor{keywordtype}{float}\ pressure)}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ this-\/>temperature\_\ =\ temperature;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ this-\/>humidity\_\ =\ humidity;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ this-\/>pressure\_\ =\ pressure;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_weather_data_af804be968ac54f7bf7d5663bfe89b67c}{measurementsChanged}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_WEATHERDATA\_h\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,105 @@
+\doxysection{Weather\+Data Class Reference}
+\hypertarget{class_weather_data}{}\label{class_weather_data}\index{WeatherData@{WeatherData}}
+Inheritance diagram for Weather\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_weather_data}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_weather_data_a949ea7ebd3b302ff3bda5b6b3a10d7d4}{register\+Observer}} (\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}o) override
+\begin{DoxyCompactList}\small\item\em метод для добавления новых наблюдателей для оповещения \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_weather_data_a0471b66312241f54f49088129eb05f01}{remove\+Observers}} (\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}o) override
+\begin{DoxyCompactList}\small\item\em метод для удаления наблюдателя из вектора \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_weather_data_ad876d1e134209b94cb4ac4729dda8019}{notify\+Observers}} ()
+\begin{DoxyCompactList}\small\item\em метод для оповещения наблюдателей о появлении новых данных \end{DoxyCompactList}\item 
+\Hypertarget{class_weather_data_af804be968ac54f7bf7d5663bfe89b67c}\label{class_weather_data_af804be968ac54f7bf7d5663bfe89b67c} 
+void {\bfseries measurements\+Changed} ()
+\begin{DoxyCompactList}\small\item\em метод для вызова метода для оповещения наблюдателей о появлении новых данных \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_weather_data_a21bbd41dc686a3871edc0ea2c4830e62}{set\+Measurements}} (float temperature, float humidity, float pressure)
+\begin{DoxyCompactList}\small\item\em метод для имитации чтения данных с датчиков температуры, влажности и атмосферного давления \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_ac6e48ec045d28290182cde712c9b745a}{register\+Observer}} (\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}o)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a0627c0d88314586508003e6fa2dfab05}{remove\+Observers}} (\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}o)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a4d7d2edfc8eb2d8a06104f9e82124d4d}{notify\+Observers}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_weather_data_ad876d1e134209b94cb4ac4729dda8019}\label{class_weather_data_ad876d1e134209b94cb4ac4729dda8019} 
+\index{WeatherData@{WeatherData}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!WeatherData@{WeatherData}}
+\doxysubsubsection{\texorpdfstring{notifyObservers()}{notifyObservers()}}
+{\footnotesize\ttfamily void Weather\+Data\+::notify\+Observers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+метод для оповещения наблюдателей о появлении новых данных 
+
+
+
+Implements \mbox{\hyperlink{class_i_subject}{ISubject}}.
+
+\Hypertarget{class_weather_data_a949ea7ebd3b302ff3bda5b6b3a10d7d4}\label{class_weather_data_a949ea7ebd3b302ff3bda5b6b3a10d7d4} 
+\index{WeatherData@{WeatherData}!registerObserver@{registerObserver}}
+\index{registerObserver@{registerObserver}!WeatherData@{WeatherData}}
+\doxysubsubsection{\texorpdfstring{registerObserver()}{registerObserver()}}
+{\footnotesize\ttfamily void Weather\+Data\+::register\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+метод для добавления новых наблюдателей для оповещения 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em o} & -\/ указатель на объект класса \doxylink{class_i_observer}{IObserver}, который добавляется в вектор наблюдателей \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_subject}{ISubject}}.
+
+\Hypertarget{class_weather_data_a0471b66312241f54f49088129eb05f01}\label{class_weather_data_a0471b66312241f54f49088129eb05f01} 
+\index{WeatherData@{WeatherData}!removeObservers@{removeObservers}}
+\index{removeObservers@{removeObservers}!WeatherData@{WeatherData}}
+\doxysubsubsection{\texorpdfstring{removeObservers()}{removeObservers()}}
+{\footnotesize\ttfamily void Weather\+Data\+::remove\+Observers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_observer}{IObserver}} \texorpdfstring{$\ast$}{*}}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+метод для удаления наблюдателя из вектора 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em o} & -\/ указатель на объект класса \doxylink{class_i_observer}{IObserver} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_subject}{ISubject}}.
+
+\Hypertarget{class_weather_data_a21bbd41dc686a3871edc0ea2c4830e62}\label{class_weather_data_a21bbd41dc686a3871edc0ea2c4830e62} 
+\index{WeatherData@{WeatherData}!setMeasurements@{setMeasurements}}
+\index{setMeasurements@{setMeasurements}!WeatherData@{WeatherData}}
+\doxysubsubsection{\texorpdfstring{setMeasurements()}{setMeasurements()}}
+{\footnotesize\ttfamily void Weather\+Data\+::set\+Measurements (\begin{DoxyParamCaption}\item[{float}]{temperature,  }\item[{float}]{humidity,  }\item[{float}]{pressure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+метод для имитации чтения данных с датчиков температуры, влажности и атмосферного давления 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em temperature} & -\/ температура, humidity -\/ влажность, pressure -\/ давление \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Weather\+Data.\+h\end{DoxyCompactItemize}

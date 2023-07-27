@@ -1,4 +1,4 @@
-#ifndef _DISPLAYELEMENT_H_
+﻿#ifndef _DISPLAYELEMENT_H_
 #define _DISPLAYELEMENT_H_
 
 class IDisplayElement

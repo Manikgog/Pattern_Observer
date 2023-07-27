@@ -1,0 +1,53 @@
+\doxysection{Statistics\+Display.\+h}
+\hypertarget{_statistics_display_8h_source}{}\label{_statistics_display_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_STATISTICSDISPLAY\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_STATISTICSDISPLAY\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ISubject.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}IObserver.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}IDisplayElement.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_statistics_display}{StatisticsDisplay}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_observer}{IObserver}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_display_element}{IDisplayElement}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ std::vector<float>\ avgtemperature\_;}
+\DoxyCodeLine{00021\ \ \ \ \ std::vector<float>\ avghumidity\_;}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_i_subject}{ISubject}}*\ weatherData\_;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ CalculationOfAvg(std::vector<float>\ data)}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sum\ =\ 0.0f;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ el\ :\ data)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ el;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum\ /\ data.size();}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_statistics_display}{StatisticsDisplay}}(\mbox{\hyperlink{class_i_subject}{ISubject}}*\ weatherData)\ :\ weatherData\_(weatherData)}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ weatherData-\/>registerObserver(\textcolor{keyword}{this});}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ update(\textcolor{keywordtype}{float}\ temper,\ \textcolor{keywordtype}{float}\ humid,\ \textcolor{keywordtype}{float}\ pressure)}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ this-\/>avgtemperature\_.push\_back(temper);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ this-\/>avghumidity\_.push\_back(humid);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ display();}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ display()}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Average\ temperature:\ "{}}\ <<\ CalculationOfAvg(avgtemperature\_)\ <<\ \textcolor{stringliteral}{"{}\ F\ degrees\(\backslash\)n"{}}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Average\ humidity:\ "{}}\ <<\ CalculationOfAvg(avghumidity\_)\ <<\ \textcolor{stringliteral}{"{}\ \%\(\backslash\)n"{}};}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_STATISTICSDISPLAY\_H\_}}
+
+\end{DoxyCode}

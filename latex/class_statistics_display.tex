@@ -1,0 +1,68 @@
+\doxysection{Statistics\+Display Class Reference}
+\hypertarget{class_statistics_display}{}\label{class_statistics_display}\index{StatisticsDisplay@{StatisticsDisplay}}
+
+
+класс типа наблюдатель собирает статистику Записывает данные в вектора температуры и влажности и при запросе статистики вычисляет среднее арифметическое накопленных данных  
+
+
+
+
+{\ttfamily \#include $<$Statistics\+Display.\+h$>$}
+
+Inheritance diagram for Statistics\+Display\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_statistics_display}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_statistics_display_a5335e5c6df751ca9e23a89afd9d03726}\label{class_statistics_display_a5335e5c6df751ca9e23a89afd9d03726} 
+{\bfseries Statistics\+Display} (\mbox{\hyperlink{class_i_subject}{ISubject}} \texorpdfstring{$\ast$}{*}weather\+Data)
+\item 
+void \mbox{\hyperlink{class_statistics_display_aaa2baeb5d6b3cf7fbe0a4cf41159e464}{update}} (float temper, float humid, float pressure)
+\item 
+void \mbox{\hyperlink{class_statistics_display_ae048480711b35ef48ea106d333d521c1}{display}} ()
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_i_observer_a03794f6c161c62949c6376071e275871}\label{class_i_observer_a03794f6c161c62949c6376071e275871} 
+virtual void {\bfseries update} (float temp, float hum, float pressure)
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_i_display_element_aa29bad00fb7c0c5d466b44aa87732337}\label{class_i_display_element_aa29bad00fb7c0c5d466b44aa87732337} 
+virtual void {\bfseries display} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+класс типа наблюдатель собирает статистику Записывает данные в вектора температуры и влажности и при запросе статистики вычисляет среднее арифметическое накопленных данных 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_statistics_display_ae048480711b35ef48ea106d333d521c1}\label{class_statistics_display_ae048480711b35ef48ea106d333d521c1} 
+\index{StatisticsDisplay@{StatisticsDisplay}!display@{display}}
+\index{display@{display}!StatisticsDisplay@{StatisticsDisplay}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Statistics\+Display\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_display_element}{IDisplay\+Element}}.
+
+\Hypertarget{class_statistics_display_aaa2baeb5d6b3cf7fbe0a4cf41159e464}\label{class_statistics_display_aaa2baeb5d6b3cf7fbe0a4cf41159e464} 
+\index{StatisticsDisplay@{StatisticsDisplay}!update@{update}}
+\index{update@{update}!StatisticsDisplay@{StatisticsDisplay}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Statistics\+Display\+::update (\begin{DoxyParamCaption}\item[{float}]{temper,  }\item[{float}]{humid,  }\item[{float}]{pressure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_i_observer}{IObserver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Statistics\+Display.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\doxysection{Current\+Conditions\+Display Class Reference}
+\hypertarget{class_current_conditions_display}{}\label{class_current_conditions_display}\index{CurrentConditionsDisplay@{CurrentConditionsDisplay}}
+Inheritance diagram for Current\+Conditions\+Display\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_current_conditions_display}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_current_conditions_display_a7f382460a413599d811383006f724a1b}\label{class_current_conditions_display_a7f382460a413599d811383006f724a1b} 
+{\bfseries Current\+Conditions\+Display} (\mbox{\hyperlink{class_i_subject}{ISubject}} \texorpdfstring{$\ast$}{*}weather\+Data)
+\item 
+void \mbox{\hyperlink{class_current_conditions_display_a35e72eeeadbef8d58f14ae89c8f492d1}{update}} (float temper, float humid, float pressure)
+\item 
+void \mbox{\hyperlink{class_current_conditions_display_a353a7592df0612a298e0d0a4ca2c54b6}{display}} ()
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_i_observer_a03794f6c161c62949c6376071e275871}\label{class_i_observer_a03794f6c161c62949c6376071e275871} 
+virtual void {\bfseries update} (float temp, float hum, float pressure)
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_i_display_element_aa29bad00fb7c0c5d466b44aa87732337}\label{class_i_display_element_aa29bad00fb7c0c5d466b44aa87732337} 
+virtual void {\bfseries display} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_current_conditions_display_a353a7592df0612a298e0d0a4ca2c54b6}\label{class_current_conditions_display_a353a7592df0612a298e0d0a4ca2c54b6} 
+\index{CurrentConditionsDisplay@{CurrentConditionsDisplay}!display@{display}}
+\index{display@{display}!CurrentConditionsDisplay@{CurrentConditionsDisplay}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Current\+Conditions\+Display\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_display_element}{IDisplay\+Element}}.
+
+\Hypertarget{class_current_conditions_display_a35e72eeeadbef8d58f14ae89c8f492d1}\label{class_current_conditions_display_a35e72eeeadbef8d58f14ae89c8f492d1} 
+\index{CurrentConditionsDisplay@{CurrentConditionsDisplay}!update@{update}}
+\index{update@{update}!CurrentConditionsDisplay@{CurrentConditionsDisplay}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Current\+Conditions\+Display\+::update (\begin{DoxyParamCaption}\item[{float}]{temper,  }\item[{float}]{humid,  }\item[{float}]{pressure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_i_observer}{IObserver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Current\+Conditions\+Display.\+h\end{DoxyCompactItemize}

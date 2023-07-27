@@ -1,0 +1,43 @@
+\doxysection{Current\+Conditions\+Display.\+h}
+\hypertarget{_current_conditions_display_8h_source}{}\label{_current_conditions_display_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_CURRENTCONDITIONSDISPLAY\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_CURRENTCONDITIONSDISPLAY\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ISubject.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IObserver.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}IDisplayElement.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_current_conditions_display}{CurrentConditionsDisplay}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_observer}{IObserver}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_display_element}{IDisplayElement}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{float}\ temper\_;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{float}\ humid\_;}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_i_subject}{ISubject}}*\ weatherData\_;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_current_conditions_display}{CurrentConditionsDisplay}}(\mbox{\hyperlink{class_i_subject}{ISubject}}*\ weatherData)\ :\ weatherData\_(weatherData)}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ weatherData-\/>registerObserver(\textcolor{keyword}{this});}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ update(\textcolor{keywordtype}{float}\ temper,\ \textcolor{keywordtype}{float}\ humid,\ \textcolor{keywordtype}{float}\ pressure)}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ this-\/>temper\_\ =\ temper;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ this-\/>humid\_\ =\ humid;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ display();}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ display()}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Current\ conditions:\ "{}}\ <<\ this-\/>temper\_\ <<\ \textcolor{stringliteral}{"{}\ F\ degrees\ and\ "{}}\ <<\ humid\_\ <<\ \textcolor{stringliteral}{"{}\ \%\ humidity\(\backslash\)n"{}};}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !}}
+
+\end{DoxyCode}
